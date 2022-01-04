@@ -24,6 +24,13 @@ class Snake:
             x_start -= 20
             self.body.append(turtle)
 
+    def reset_snake(self):
+        for part in self.body:
+            part.goto(1000, 1000)
+        self.body.clear()
+        self.birth_snake()
+        self.head = self.body[0]
+
     def move(self):
         for segment in range(len(self.body) - 1, 0, -1):
             position_x = self.body[segment - 1].xcor()
@@ -49,9 +56,6 @@ class Snake:
 
     def grow(self):
         turtle = Turtle(shape="square")
-        # turtle.position_x = self.body[-1].xcor()
-        # turtle.position_y = self.body[-1].ycor()
-        # This turned out to be just another way of doing the same thing (with or without hiding the turtle).
         turtle.hideturtle()
         turtle.color("white")
         turtle.penup()
