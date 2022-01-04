@@ -14,8 +14,4 @@ class Food(Turtle):
         self.reappear()
 
     def reappear(self):
-        # self.hideturtle()
-        # self.setposition(randint(-280, 280), randint(-280, 280))
-        # self.showturtle()
-        # Unnecessarily complicated.
         self.goto(randint(-280, 280), randint(-280, 280))
